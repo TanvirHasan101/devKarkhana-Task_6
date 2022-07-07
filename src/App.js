@@ -1,24 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route } from "react-router-dom";
+import BMI from './components/BMI';
+import BMR from './components/BMR';
+import Header from './components/Header';
+import IdealWeight from './components/IdealWeight';
+import Calorie from './components/Calorie';
+import Welcome from './components/Welcome';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='bg-lime-100 h-screen'>
+      <Header></Header>
+
+      <Routes>
+        <Route path="/" element={<Welcome></Welcome>} />
+        <Route path="/home" element={<Welcome></Welcome>} />
+        <Route path="/bmi" element={<BMI />} />
+        <Route path="/bmr" element={<BMR />} />
+        <Route path="/idealweight" element={<IdealWeight></IdealWeight>} />
+        <Route path="/calorie" element={<Calorie />} />
+      </Routes>
+
+
     </div>
+
   );
 }
 
